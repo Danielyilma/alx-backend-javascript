@@ -1,4 +1,6 @@
 import getResponseFromAPI from "./0-promise.js";
 
-const response = getResponseFromAPI();
-console.log(response instanceof Promise);
+test("getResponseFromAPI returns a promise", () => {
+    const response = getResponseFromAPI();
+    expect(response instanceof Promise).toBe(true);
+  });
