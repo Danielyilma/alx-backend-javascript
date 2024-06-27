@@ -1,6 +1,7 @@
-import Pricing from './4-pricing.js';
-import Currency from './3-currency.js';
+import EVCar from './100-evcar.js';
 
-const p = new Pricing(100, new Currency("EUR", "Euro"))
-console.log(p);
-console.log(p.displayFullPrice());
+const ec1 = new EVCar("Tesla", "Turbo", "Red", "250");
+console.log(ec1);
+
+const ec2 = ec1.cloneCar();
+console.log(ec2);
