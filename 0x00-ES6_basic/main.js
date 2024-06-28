@@ -1,4 +1,3 @@
-import concatArrays from './5-spread-operator.js';
+import appendToEachArrayValue from './10-loops.js';
 
-console.log(concatArrays(['a', 'b'], ['c', 'd'], 'Hello'));
-
+console.log(appendToEachArrayValue(['appended', 'fixed', 'displayed'], 'correctly-'));
