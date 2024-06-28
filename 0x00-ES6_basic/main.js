@@ -1,3 +1,5 @@
-import createEmployeesObject from './11-createEmployeesObject.js';
+import getNeighborhoodsList from './2-arrow.js';
 
-console.log(createEmployeesObject("Software", [ "Bob", "Sylvie" ]));
+const neighborhoodsList = new getNeighborhoodsList();
+const res = neighborhoodsList.addNeighborhood('Noe Valley');
+console.log(res);
