@@ -1,4 +1,5 @@
-import getListStudents from "./0-get_list_students.js";
+import cleanSet from "./8-clean_set.js";
 
-console.log(getListStudents());
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), 'bon'));
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), ''));
 
