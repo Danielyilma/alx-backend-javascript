@@ -35,7 +35,11 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     const title = 'This is the list of our students\n';
     captureScriptOutput(process.argv[2])
-      .then((output) => res.end(title + output.slice(0, -1)))
+      .then((output) => {
+        res.setHeader('Content-Type', 'text/plain');
+        res.statusCode = 200;
+        res.end(title + output.slice(0, -1))
+    })
       .catch(() => {
         res.statusCode = 400;
         res.end('error not found');
