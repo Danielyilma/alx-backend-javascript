@@ -33,7 +33,7 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
       } else {
         processing(data.trim().split('\n'));
-        resolve(data);
+        resolve();
       }
     });
   });
