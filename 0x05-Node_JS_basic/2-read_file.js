@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+/**
+ * Counts the students in a CSV data file.
+ * @param {String} dataPath The path to the CSV data file.
+ */
+
 function countStudents(path) {
   if (!fs.existsSync(path)) {
     throw new Error('Cannot load the database');
@@ -8,12 +13,7 @@ function countStudents(path) {
     throw new Error('Cannot load the database');
   }
 
-  let data;
-  try {
-    data = fs.readFileSync(path, 'utf-8').trim().split('\n');
-  } catch (e) {
-    throw new Error('Cannot load the database');
-  }
+  const data = fs.readFileSync(path, 'utf-8').trim().split('\n');
   const fields = data[0].split(',');
   const studentsData = {};
 
