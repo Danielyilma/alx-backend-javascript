@@ -1,10 +1,5 @@
 const fs = require('fs');
 
-/**
- * Counts the students in a CSV data file.
- * @param {String} dataPath The path to the CSV data file.
- */
-
 function countStudents(path) {
   if (!fs.existsSync(path)) {
     throw new Error('Cannot load the database');
@@ -26,10 +21,10 @@ function countStudents(path) {
     };
 
     // console.log(tempDict)
-    if (!studentsData[student.at(-1)]) {
-      studentsData[student.at(-1)] = [];
+    if (!studentsData[student[student.length - 1]]) {
+      studentsData[student[student.length - 1]] = [];
     }
-    studentsData[student.at(-1)].push(tempDict);
+    studentsData[student[student.length - 1]].push(tempDict);
   }
 
   console.log(`Number of students: ${data.length - 1}`);
