@@ -13,10 +13,10 @@ function processing(data) {
     };
 
     // console.log(tempDict)
-    if (!studentsData[student.at(-1)]) {
-      studentsData[student.at(-1)] = [];
+    if (!studentsData[student[student.length - 1]]) {
+      studentsData[student[student.length - 1]] = [];
     }
-    studentsData[student.at(-1)].push(tempDict);
+    studentsData[student[student.length - 1]].push(tempDict);
   }
 
   console.log(`Number of students: ${data.length - 1}`);
