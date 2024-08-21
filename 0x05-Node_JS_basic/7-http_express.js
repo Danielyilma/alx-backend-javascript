@@ -7,7 +7,7 @@ const port = 1245;
 function captureScriptOutput(path) {
   return new Promise((resolve, reject) => {
     if (path == null) {
-      reject(new Error('Cannot load the databas'));
+      reject(new Error('Cannot load the database'));
     }
     const child = spawn('node', ['./script.js', path]);
 
@@ -23,7 +23,7 @@ function captureScriptOutput(path) {
       if (code === 0) {
         resolve(output);
       } else {
-        reject(new Error('Cannot load the databas'));
+        reject(new Error('Cannot load the database'));
       }
     });
   });
