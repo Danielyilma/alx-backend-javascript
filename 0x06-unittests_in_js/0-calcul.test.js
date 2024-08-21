@@ -57,5 +57,10 @@ describe("testing adder function", () => {
         let result = calculateNumber(2.5, 5.3);
         assert.equal(result, 8);
     });
+
+    it("add 2 zero", () => {
+        let result = calculateNumber(0, 0);
+        assert.equal(result, 0);
+    });
   });
 });
