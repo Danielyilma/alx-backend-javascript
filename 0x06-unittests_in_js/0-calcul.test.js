@@ -54,13 +54,19 @@ describe("testing adder function", () => {
     });
 
     it("add 2 postive float", () => {
-        let result = calculateNumber(2.5, 5.3);
-        assert.equal(result, 8);
+        let result = calculateNumber(-2.5, -5.3);
+        assert.equal(result, -7);
     });
 
     it("add 2 zero", () => {
         let result = calculateNumber(0, 0);
         assert.equal(result, 0);
     });
+
+    it("add 2 zero", () => {
+        let result = calculateNumber(2.45, 1.00);
+        assert.equal(result, 3);
+    });
+
   });
 });
