@@ -30,7 +30,7 @@ class StudentsController {
           return;
         }
         const field = request.params.major;
-        const report = `Number of students in ${field}: ${
+        const report = `List: ${field}: ${
           students[field].length
         }. List: ${students[field].join(', ')}`;
 
