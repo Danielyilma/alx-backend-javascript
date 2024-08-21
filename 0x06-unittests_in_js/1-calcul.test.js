@@ -2,7 +2,12 @@ const assert = require("assert")
 const calculateNumber = require("./1-calcul")
 
 describe('testing calculateNumber function', () => {
-    describe('calculateNumber function', () => {
+
+    /**
+     * testing the type SUM paramenter 
+     */
+
+    describe('test type SUM', () => {
         it('test type SUM ', () => {
             let result = calculateNumber('SUM', 0, 0)
             assert.equal(result, 0)
@@ -37,7 +42,13 @@ describe('testing calculateNumber function', () => {
             let result = calculateNumber('SUM', 3.51, 2.46)
             assert.equal(result, 6)
         })
+    })
 
+    /**
+     * testing the type SUBTRACT paramenter 
+     */
+
+    describe('test type SUBTRACT', () => {
         it('test type SUBTRACT ', () => {
             let result = calculateNumber('SUBTRACT', 0, 0)
             assert.equal(result, 0)
@@ -72,7 +83,13 @@ describe('testing calculateNumber function', () => {
             let result = calculateNumber('DIVIDE', 1, 1)
             assert.equal(result, 1)
         })
+    })
 
+    /**
+     * testing the type DIVIDE paramenter 
+     */
+
+    describe('test type DIVIDE', () => {
         it('test type DIVIDE ', () => {
             let result = calculateNumber('DIVIDE', 0, 0)
             assert.equal(result, 'Error')
