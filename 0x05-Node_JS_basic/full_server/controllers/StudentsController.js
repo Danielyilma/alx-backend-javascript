@@ -2,9 +2,8 @@ import readDatabase from '../utils';
 
 class StudentsController {
   static getAllStudents(request, response) {
-    const title = 'This is the list of our students\n';
-    let respData = title;
-    readDatabase('database.csv')
+    let respData = 'This is the list of our students\n';
+    readDatabase(process.argv[2])
       .then((students) => {
         for (const key of Object.keys(students).sort()) {
           respData += `Number of students in ${key}: ${
@@ -16,13 +15,13 @@ class StudentsController {
       })
       .catch((err) => {
         response.statusCode = 500;
-        response.send(title + err.message);
+        response.send(err.message);
       });
   }
 
   static getAllStudentsByMajor(request, response) {
     const title = 'This is the list of our students\n';
-    readDatabase('database.csv')
+    readDatabase(process.argv[2])
       .then((students) => {
         if (!(request.params.major && students[request.params.major])) {
           response.statusCode = 500;
@@ -37,7 +36,7 @@ class StudentsController {
       })
       .catch((err) => {
         response.statusCode = 500;
-        response.send(title + err.message);
+        response.send(err.message);
       });
   }
 }
