@@ -1,48 +1,26 @@
 import fs from 'fs';
 
-/**
- * Reads the data of students in a CSV data file.
- * @param {String} dataPath The path to the CSV data file.
- * @returns {Promise<{
- *   String: {firstname: String, lastname: String, age: number}[]
- * }>}
- */
-const readDatabase = (dataPath) => new Promise((resolve, reject) => {
-  if (!dataPath) {
-    reject(new Error('Cannot load the database'));
-  }
-  if (dataPath) {
-    fs.readFile(dataPath, (err, data) => {
+function readDatabase(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
-      }
-      if (data) {
-        const fileLines = data
-          .toString('utf-8')
-          .trim()
-          .split('\n');
-        const studentGroups = {};
-        const dbFieldNames = fileLines[0].split(',');
-        const studentPropNames = dbFieldNames
-          .slice(0, dbFieldNames.length - 1);
+      } else if (data) {
+        const filedata = data.trim().split('\n');
+        const students = {};
 
-        for (const line of fileLines.slice(1)) {
-          const studentRecord = line.split(',');
-          const studentPropValues = studentRecord
-            .slice(0, studentRecord.length - 1);
-          const field = studentRecord[studentRecord.length - 1];
-          if (!Object.keys(studentGroups).includes(field)) {
-            studentGroups[field] = [];
+        filedata.slice(1).map((element) => {
+          const studentData = element.split(',');
+          if (!students[studentData[studentData.length - 1]]) {
+            students[studentData[studentData.length - 1]] = [];
           }
-          const studentEntries = studentPropNames
-            .map((propName, idx) => [propName, studentPropValues[idx]]);
-          studentGroups[field].push(Object.fromEntries(studentEntries));
-        }
-        resolve(studentGroups);
+          students[studentData[studentData.length - 1]].push(studentData[0]);
+          return null;
+        });
+        resolve(students);
       }
     });
-  }
-});
+  });
+}
 
-export default readDatabase;
 module.exports = readDatabase;
