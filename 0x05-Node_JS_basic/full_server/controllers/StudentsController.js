@@ -30,9 +30,7 @@ class StudentsController {
           return;
         }
         const field = request.params.major;
-        const report = `List: ${field}: ${
-          students[field].length
-        }. List: ${students[field].join(', ')}`;
+        const report = `List: ${students[field].join(', ')}`;
 
         response.statusCode = 200;
         response.send(title + report);
