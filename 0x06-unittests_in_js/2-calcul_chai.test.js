@@ -33,13 +33,13 @@ describe("testing calculateNumber function", () => {
     });
 
     it("test type SUM ", () => {
-      let result = calculateNumber("SUM", 1, 1.0);
-      expect(result).to.eq(2);
+      let result = calculateNumber("SUM", 1.2, 3.7);
+      expect(result).to.eq(5);
     });
 
     it("test type SUM ", () => {
-      let result = calculateNumber("SUM", 3.51, 2.46);
-      expect(result).to.eq(6);
+      let result = calculateNumber("SUM", 3.51, 2.56);
+      expect(result).to.eq(7);
     });
   });
 
