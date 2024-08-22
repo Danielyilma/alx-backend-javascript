@@ -1,5 +1,5 @@
-const assert = require("assert");
-const calculateNumber = require("./0-calcul");
+import assert from "assert";
+import calculateNumber from "./0-calcul.js";
 
 describe("testing adder function", () => {
   describe("calculateNumber", () => {
