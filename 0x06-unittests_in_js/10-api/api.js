@@ -13,7 +13,7 @@ app.get("/", (req, resp) => {
 app.get("/cart/:id", (req, res) => {
   const id = req.params.id;
   if (!/^[+-]?\d+(\.\d+)?$/.test(id)) {
-    res.statusCode = 400;
+    res.statusCode = 404;
     res.send();
     return;
   }
