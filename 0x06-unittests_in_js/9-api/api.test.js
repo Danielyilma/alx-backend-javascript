@@ -42,7 +42,7 @@ describe("test api", () => {
       });
     });
 
-    it("should return 400 status if /cart/id id in not number", (done) => {
+    it("should return 404 status if /cart/id id in not number", (done) => {
       request("http://localhost:7865/cart/one", (err, res, body) => {
         expect(res.statusCode).to.be.equal(404);
         done();
