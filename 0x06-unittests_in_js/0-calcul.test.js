@@ -1,5 +1,5 @@
-import assert from "assert";
-import calculateNumber from "./0-calcul.js";
+const assert = require('assert')
+const calculateNumber = require('./0-calcul')
 
 describe("testing adder function", () => {
   describe("calculateNumber", () => {
@@ -64,7 +64,7 @@ describe("testing adder function", () => {
     });
 
     it("add 2 zero", () => {
-        let result = calculateNumber(2.45, 1.00);
+        let result = calculateNumber(2, 1.10);
         assert.equal(result, 3);
     });
 
