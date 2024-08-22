@@ -35,14 +35,14 @@ describe("test api", () => {
    */
 
   describe("cart payment", () => {
-    it("should return 200 status if /cart/id id in number", (done) => {
+    it("should return 200 status if /cart/id id is number", (done) => {
       request("http://localhost:7865/cart/1", (err, res, body) => {
         expect(res.statusCode).to.be.equal(200);
         done();
       });
     });
 
-    it("should return 400 status if /cart/id id in not number", (done) => {
+    it("should return 400 status if /cart/id id is not number", (done) => {
       request("http://localhost:7865/cart/one", (err, res, body) => {
         expect(res.statusCode).to.be.equal(400);
         done();
