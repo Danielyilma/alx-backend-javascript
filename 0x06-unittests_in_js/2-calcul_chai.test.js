@@ -1,5 +1,5 @@
-const { expect } = require('chai')
-const calculateNumber = require('./2-calcul_chai')
+const { expect } = require("chai");
+const calculateNumber = require("./2-calcul_chai");
 
 describe("testing calculateNumber function", () => {
   /**
@@ -77,11 +77,6 @@ describe("testing calculateNumber function", () => {
       let result = calculateNumber("SUBTRACT", -1, -1);
       expect(result).to.eq(0);
     });
-
-    it("test type SUBTRACT ", () => {
-      let result = calculateNumber("DIVIDE", 1, 1);
-      expect(result).to.eq(1);
-    });
   });
 
   /**
@@ -112,6 +107,11 @@ describe("testing calculateNumber function", () => {
     it("test type DIVIDE ", () => {
       let result = calculateNumber("DIVIDE", -1, -1);
       expect(result).to.eq(1);
+    });
+
+    it("test type SUBTRACT ", () => {
+      let result = calculateNumber("DIVIDE", 4.4, 2.4);
+      expect(result).to.eq(2);
     });
   });
 });
