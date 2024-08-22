@@ -96,7 +96,7 @@ describe('testing calculateNumber function', () => {
         })
 
         it('test type DIVIDE ', () => {
-            let result = calculateNumber('DIVIDE', 1.5, 1.4)
+            let result = calculateNumber('DIVIDE', 4.4, 2.4)
             assert.equal(result, 2)
         })
 
