@@ -63,9 +63,9 @@ describe("testing adder function", () => {
         assert.equal(result, 0);
     });
 
-    it("add 2 zero", () => {
-        let result = calculateNumber(2, 1.50);
-        assert.equal(result, 4);
+    it("add 2 zeros", () => {
+        let result = calculateNumber(2.499999, 3.499999);
+        assert.equal(result, 5);
     });
 
   });
