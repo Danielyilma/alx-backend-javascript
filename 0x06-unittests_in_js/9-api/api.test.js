@@ -36,8 +36,10 @@ describe("test api", () => {
 
   describe("cart payment", () => {
     it("should return 200 status if /cart/id id in number", (done) => {
+      const expected = "Payment methods for cart 1";
       request("http://localhost:7865/cart/1", (err, res, body) => {
         expect(res.statusCode).to.be.equal(200);
+        expect(body).to.be.equal(expected);
         done();
       });
     });
